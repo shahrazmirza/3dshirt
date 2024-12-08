@@ -20,7 +20,7 @@ const CanvasModel = () => {
 
       {/* <CameraRig> */}
       {/* <Backdrop /> */}
-      <group scale={[3.8, 3.8, 3.8]} position={[0, 0.15, 0]}>
+      <group scale={[3.8, 3.8, 3.8]} position={[0, 0.25, 0]}>
         <Shirt />
       </group>
       {/* </CameraRig> */}
