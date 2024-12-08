@@ -75,7 +75,7 @@ const Customiser = () => {
             {...slideAnimation("left")}
           >
             <div className="flex items-center min-h-screen">
-              <div className="editortabs-container tabs">
+              <div className="glassmorphism w-16 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-4 tabs">
                 {EditorTabs.map((tab) => (
                   <Tab
                     key={tab.name}

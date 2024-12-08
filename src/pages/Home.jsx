@@ -15,8 +15,14 @@ const Home = () => {
   return (
     <AnimatePresence>
       {snap.intro && (
-        <motion.section className="home" {...slideAnimation("left")}>
-          <motion.div className="home-content" {...headContainerAnimation}>
+        <motion.section
+          className="w-fit p-6 absolute z-10"
+          {...slideAnimation("left")}
+        >
+          <motion.div
+            className="flex-1 xl:justify-center justify-start flex flex-col gap-10"
+            {...headContainerAnimation}
+          >
             <motion.div {...headContentAnimation} className="">
               <CustomButton
                 type="filled"
