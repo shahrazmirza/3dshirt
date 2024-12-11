@@ -4,6 +4,7 @@ import { Environment } from "@react-three/drei";
 import Shirt from "./Shirt";
 import Backdrop from "./Backdrop";
 import CameraRig from "./CameraRig";
+import ShirtArm from "./ShirtArm";
 
 const CanvasModel = () => {
   return (
@@ -22,6 +23,7 @@ const CanvasModel = () => {
       {/* <Backdrop /> */}
       <group scale={[3.8, 3.8, 3.8]} position={[0, 0.45, 0]}>
         <Shirt />
+        {/* <ShirtArm /> */}
       </group>
       {/* </CameraRig> */}
     </Canvas>
