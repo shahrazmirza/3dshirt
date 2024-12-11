@@ -13,7 +13,6 @@ const ShirtArm = () => {
   const logoTexture = snap.logoDecal ? useTexture(snap.logoDecal) : null;
   const fullTexture = snap.fullDecal ? useTexture(snap.fullDecal) : null;
 
-  // Set anisotropy if textures are present
   if (logoTexture) logoTexture.anisotropy = 16;
   if (fullTexture) fullTexture.anisotropy = 16;
 
