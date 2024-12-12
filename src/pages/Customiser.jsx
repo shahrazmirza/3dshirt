@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSnapshot } from "valtio";
 
@@ -7,7 +7,13 @@ import { download } from "../assets";
 import { downloadCanvasToImage, reader } from "../config/helpers";
 import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
 import { fadeAnimation, slideAnimation } from "../config/motion";
-import { ColorPicker, CustomButton, FilePicker, Tab } from "../components";
+import {
+  ShirtColorPicker,
+  DesignColorPicker,
+  CustomButton,
+  FilePicker,
+  Tab,
+} from "../components";
 
 const Customiser = () => {
   const snap = useSnapshot(state);
@@ -20,8 +26,10 @@ const Customiser = () => {
 
   const generateTabContent = () => {
     switch (activeEditorTab) {
-      case "colorpicker":
-        return <ColorPicker />;
+      case "shirtcolorpicker":
+        return <ShirtColorPicker />;
+      case "designcolorpicker":
+        return <DesignColorPicker />;
       case "filepicker":
         return <FilePicker file={file} setFile={setFile} readFile={readFile} />;
       default:
@@ -50,12 +58,10 @@ const Customiser = () => {
         state.isFullTexture = false;
         break;
     }
-    setActiveFilterTab((prevState) => {
-      return {
-        ...prevState,
-        [tabName]: !prevState[tabName],
-      };
-    });
+    setActiveFilterTab((prevState) => ({
+      ...prevState,
+      [tabName]: !prevState[tabName],
+    }));
   };
 
   const readFile = (type) => {
@@ -75,7 +81,7 @@ const Customiser = () => {
             {...slideAnimation("left")}
           >
             <div className="flex items-center min-h-screen">
-              <div className="glassmorphism w-16 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-4 tabs">
+              <div className="glassmorphism w-28 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-4 tabs">
                 {EditorTabs.map((tab) => (
                   <Tab
                     key={tab.name}

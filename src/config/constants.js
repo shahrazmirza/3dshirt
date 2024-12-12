@@ -2,12 +2,19 @@ import { swatch, fileIcon, logoShirt, stylishShirt } from "../assets";
 
 export const EditorTabs = [
   {
-    name: "colorpicker",
+    name: "shirtcolorpicker",
     icon: swatch,
+    label: "Shirt Color",
+  },
+  {
+    name: "designcolorpicker",
+    icon: swatch,
+    label: "Design Color",
   },
   {
     name: "filepicker",
     icon: fileIcon,
+    label: "Pattern or Logo",
   },
 ];
 

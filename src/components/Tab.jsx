@@ -14,7 +14,7 @@ const Tab = ({ tab, isFilterTab, isActiveTab, handleClick }) => {
   return (
     <div
       key={tab.name}
-      className={`w-14 h-14 flex justify-center items-center cursor-pointer select-none ${
+      className={`w-22 h-22 flex justify-center items-center cursor-pointer select-none ${
         isFilterTab ? "rounded-full glassmorphism" : "rounded-4"
       }`}
       onClick={handleClick}
@@ -27,6 +27,9 @@ const Tab = ({ tab, isFilterTab, isActiveTab, handleClick }) => {
           isFilterTab ? "w-2/3 h-2/3" : "w-11/12 h-11/12 object-contain"
         }`}
       />
+      <h1 className="text-xs -rotate-90 font-semibold text-center">
+        {tab.label}
+      </h1>
     </div>
   );
 };

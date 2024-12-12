@@ -1,6 +1,7 @@
 import CustomButton from "./CustomButton";
-import ColorPicker from "./ColorPicker";
+import ShirtColorPicker from "./ShirtColorPicker";
+import DesignColorPicker from "./DesignColorPicker";
 import FilePicker from "./FilePicker";
 import Tab from "./Tab";
 
-export { CustomButton, ColorPicker, FilePicker, Tab };
+export { CustomButton, ShirtColorPicker, DesignColorPicker, FilePicker, Tab };

@@ -4,7 +4,7 @@ import { useSnapshot } from "valtio";
 
 import state from "../store";
 
-const ColorPicker = () => {
+const ShirtColorPicker = () => {
   const snap = useSnapshot(state);
 
   return (
@@ -12,10 +12,10 @@ const ColorPicker = () => {
       <SketchPicker
         color={snap.color}
         disableAlpha
-        onChange={(color) => (state.color = color.hex)}
+        onChange={(color) => (state.shirtcolor = color.hex)}
       />
     </div>
   );
 };
 
-export default ColorPicker;
+export default ShirtColorPicker;

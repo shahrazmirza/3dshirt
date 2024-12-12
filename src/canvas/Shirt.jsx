@@ -16,9 +16,9 @@ const Shirt = () => {
   if (logoTexture) logoTexture.anisotropy = 16;
   if (fullTexture) fullTexture.anisotropy = 16;
 
-  useFrame((state, delta) => {
-    if (materials.lambert1 && snap.color) {
-      easing.dampC(materials.lambert1.color, snap.color, 0.25, delta);
+  useFrame((_, delta) => {
+    if (materials.lambert1 && snap.shirtcolor) {
+      easing.dampC(materials.lambert1.color, snap.shirtcolor, 0.25, delta);
     }
   });
 

@@ -6,9 +6,9 @@ import { Decal, useGLTF, useTexture } from "@react-three/drei";
 
 import state from "../store";
 
-const ShirtArm = () => {
+const ShirtDesign = () => {
   const snap = useSnapshot(state);
-  const { nodes, materials } = useGLTF("/shirt_arm.glb");
+  const { nodes, materials } = useGLTF("/shirt_design.glb");
 
   const logoTexture = snap.logoDecal ? useTexture(snap.logoDecal) : null;
   const fullTexture = snap.fullDecal ? useTexture(snap.fullDecal) : null;
@@ -16,9 +16,9 @@ const ShirtArm = () => {
   if (logoTexture) logoTexture.anisotropy = 16;
   if (fullTexture) fullTexture.anisotropy = 16;
 
-  useFrame((state, delta) => {
-    if (materials.lambert1 && snap.color) {
-      easing.dampC(materials.lambert1.color, snap.color, 0.25, delta);
+  useFrame((_, delta) => {
+    if (materials.lambert1 && snap.designcolor) {
+      easing.dampC(materials.lambert1.color, snap.designcolor, 0.25, delta);
     }
   });
 
@@ -57,4 +57,4 @@ const ShirtArm = () => {
   );
 };
 
-export default ShirtArm;
+export default ShirtDesign;

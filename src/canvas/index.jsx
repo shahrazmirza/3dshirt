@@ -4,7 +4,7 @@ import { Environment } from "@react-three/drei";
 import Shirt from "./Shirt";
 import Backdrop from "./Backdrop";
 import CameraRig from "./CameraRig";
-import ShirtArm from "./ShirtArm";
+import ShirtDesign from "./ShirtDesign";
 
 const CanvasModel = () => {
   return (
@@ -14,7 +14,7 @@ const CanvasModel = () => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <ambientLight intensity={1} />
-      <OrbitControls enableZoom={true} />
+      <OrbitControls enableZoom={false} />
 
       <directionalLight position={[10, 10, 10]} intensity={1} />
       <Environment preset="city" />
@@ -22,8 +22,8 @@ const CanvasModel = () => {
       {/* <CameraRig> */}
       {/* <Backdrop /> */}
       <group scale={[3.8, 3.8, 3.8]} position={[0, 0.45, 0]}>
-        {/* <ShirtArm /> */}
         <Shirt />
+        <ShirtDesign />
       </group>
       {/* </CameraRig> */}
     </Canvas>
