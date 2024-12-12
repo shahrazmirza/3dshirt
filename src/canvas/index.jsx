@@ -14,7 +14,7 @@ const CanvasModel = () => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <ambientLight intensity={1} />
-      <OrbitControls enableZoom={false} />
+      <OrbitControls enableZoom={true} />
 
       <directionalLight position={[10, 10, 10]} intensity={1} />
       <Environment preset="city" />
@@ -22,8 +22,8 @@ const CanvasModel = () => {
       {/* <CameraRig> */}
       {/* <Backdrop /> */}
       <group scale={[3.8, 3.8, 3.8]} position={[0, 0.45, 0]}>
-        <Shirt />
         {/* <ShirtArm /> */}
+        <Shirt />
       </group>
       {/* </CameraRig> */}
     </Canvas>
